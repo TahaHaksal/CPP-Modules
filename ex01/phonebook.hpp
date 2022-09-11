@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 class   contacts
 {
@@ -23,12 +24,9 @@ public:
         current_index = 0;
         relative_index = 0;
     }
-    void    add(contacts something)
+    void    add(contacts *something)
     {
-        contact_list[current_index] = something;
+        this->contact_list[current_index % 8] = *something;
+        current_index++;
     }
-    // void    display()
-    // {
-    //     for (int i = 0; i < )
-    // }
 };
